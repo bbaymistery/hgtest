@@ -23,7 +23,7 @@ const Layout = ({
         <link rel="icon" href="/favicon.ico" />
         <meta name="distribution" content="Global" />
         <meta name="rating" content="Safe For Kids" />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index,nofollow" />
         <meta httpEquiv="X-UA-Compatible" content="IE=8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta httpEquiv="X-UA-Compatible" content="IE=10" />
@@ -41,6 +41,7 @@ const Layout = ({
         <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
         <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" href="/images/hero.jpg" as="image" />
 
       </Head>
       <Header />
