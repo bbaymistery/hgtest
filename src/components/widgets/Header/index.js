@@ -20,11 +20,6 @@ const Header = () => {
       <nav className={styles.nav}>
         <div className={styles.logoDiv}>
           <a href="/" className={styles.logo}>
-            {/* <img
-              src={`/images/logo.png`}
-              alt="Logo"
-              className={styles.logo_header}
-            /> */}
             <Image
               src={logoImage}
               className={styles.logo_header}
@@ -39,12 +34,7 @@ const Header = () => {
 
         {/*  */}
         <div className={styles.ulDiv}>
-          <ul
-            id="nav"
-            className={`${styles.ul} ${activeClass ? styles.ulActive : "false"
-              }`}
-            ref={navRef}
-          >
+          <ul id="nav" className={`${styles.ul} ${activeClass ? styles.ulActive : "false"}`} ref={navRef}   >
             {headerLinkNames.map((item) => {
               return (
                 <li key={item.id} className={styles.li_item}>
@@ -57,12 +47,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div
-          onClick={toggleMenu}
-          ref={menuRef}
-          className={styles.menu}
-          id="menu"
-        >
+        <div onClick={toggleMenu} ref={menuRef} className={styles.menu} id="menu"  >
           <span className={styles.line}></span>
           <span className={styles.line}></span>
           <span className={styles.line}></span>

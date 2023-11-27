@@ -35,7 +35,7 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head >
-          <title>{"title"}</title>
+          <title>{title}</title>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
           <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54500Y5330" strategy='beforeInteractive' />
