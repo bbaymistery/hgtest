@@ -1,0 +1,52 @@
+@import '../../styles/colors';
+
+.about_section {
+
+
+    .container {
+        padding-top: 100px;
+        padding-bottom: 90px;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width:990px) {
+            padding-bottom: 50px;
+            margin: 0 var(--window-margin);
+
+        }
+
+
+        //default one
+        .item {
+            >h2 {
+                color: $black3;
+            }
+
+            >p>strong {
+                font-weight: bolder;
+            }
+        }
+
+        .items_content {
+
+
+
+            .items {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 40px 0px;
+            }
+
+            >h2 {
+                color: $black3;
+            }
+
+            >p>strong {
+                font-weight: bolder;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../../styles/colors';
+
+.accordion {
+    width: 100%;
+    margin: 1.5rem auto;
+
+    &_heading {
+        padding: 14px 0;
+
+        &_content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .head_title {
+                color: $black1;
+                cursor: pointer;
+                z-index: 99;
+                text-align: left;
+                font-size: 18px !important;
+            }
+
+            .headClick {
+                cursor: pointer;
+                transition: all 0.9s;
+                z-index: 99;
+                transform: rotate(0deg);
+                transition: transform 0.2s ease-in-out;
+
+
+            }
+
+
+            .turnUp {
+                transform: rotate(180deg);
+
+            }
+
+        }
+    }
+
+
+    .accordion_toggle {
+        height: 0px;
+        font-size: 15px;
+        opacity: 0;
+        transition: opacity 0.3s linear,
+            height 0.3s 0.3s linear;
+        color: #333;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        text-align: left;
+        color: $black3;
+
+        .number {
+            font-weight: bold;
+            ;
+        }
+
+    }
+
+    .animated {
+        opacity: 1;
+        transition: height 0.3s linear, opacity 0.3s 0.3s linear;
+    }
+
+}

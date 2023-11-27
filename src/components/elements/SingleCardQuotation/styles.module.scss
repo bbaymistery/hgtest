@@ -1,0 +1,423 @@
+@import '../../../styles/colors';
+
+
+.item {
+    // max-width: 290px;
+    width: 100%;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgb(82 85 90 / 10%);
+    background-color: #fff;
+
+    // !align-self: flex-start;
+    @media (max-width:1050px) {
+        max-width: 250px;
+    }
+
+
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+
+
+
+    &:hover {
+
+        .item_img_div {
+
+
+            img {
+
+                transform: scale(1.05);
+                transition: .5s linear;
+
+            }
+        }
+    }
+
+    &_img_div {
+        position: relative;
+        border-radius: 5px;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 142px;
+
+        @media (max-width: 1200px) {
+            padding: 15px;
+        }
+
+        @media (max-width:700px) {
+            padding: 25px 0px;
+        }
+
+        @media (max-width:550px) {
+            padding: 15px;
+        }
+
+
+        img {
+            border-radius: 5px;
+            transition: all 0.3s;
+            width: 108%;
+
+
+            @media (max-width:1430px) {
+                width: 122%;
+            }
+
+            @media (max-width: 1050px) {
+                width: 100%;
+            }
+
+
+            @media (max-width:420px) {
+                width: 78%;
+            }
+
+            @media (max-width:370px) {
+                width: 80%;
+            }
+        }
+    }
+
+    &_body {
+        padding: 10px 25px;
+
+        &_header {
+            display: flex;
+            justify-content: space-between;
+
+            .header_titles {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .title {
+                    color: $black1;
+                    font-weight: 500;
+                    cursor: pointer;
+                    font-size: 19px;
+
+                    @media (max-width:1430px) {
+                        font-size: 17px;
+                    }
+
+                    @media (max-width:1200px) {
+                        font-size: 15px;
+                    }
+
+                    @media (max-width:900px) {
+                        font-size: 15px;
+                    }
+
+                    @media (max-width:550px) {
+                        font-size: 14px;
+                    }
+
+                    @media (max-width:500px) {
+                        font-size: 12.5px;
+                    }
+
+                    &:hover {
+                        transition: .5s ease;
+                        color: $mainBlue;
+                    }
+                }
+
+                .subtitle {
+                    color: $black3;
+                    font-size: 13px;
+                }
+            }
+
+            .header_attributes {
+                .item_atr_ul {
+                    padding: 0px;
+                    margin-top: 10px;
+
+                    .item_atr_li {
+                        color: #0d233e;
+                        font-weight: 400;
+
+                        .li_icon:first-child {
+                            padding-left: 7px;
+                            font-size: 15px;
+
+                            @media (max-width:1200px) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .li_icon:nth-child(2) {
+                            padding-left: 11px;
+
+                            font-size: 15px;
+
+                            @media (max-width:1200px) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .li_desc {
+
+                            @media (max-width:1200px) {
+                                font-size: 14px;
+                            }
+
+                            @media (max-width:900px) {
+                                font-size: 18px;
+                            }
+
+                            @media (max-width:550px) {
+                                font-size: 14px;
+                            }
+
+                            @media (max-width:500px) {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_desc {
+
+            padding-top: 15px;
+
+            .desc_price_section {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 12px;
+
+                .price__from {
+                    font-weight: normal;
+                    font-size: 18px;
+                    color: $black3;
+                    margin-right: 10px;
+                }
+
+                .price__num {
+                    color: #0d233e;
+                    font-size: 30px;
+                    font-weight: 500;
+                    position: relative;
+
+                    @media (max-width:1430px) {
+                        font-size: 22px;
+                    }
+
+                    @media (max-width:1200px) {
+                        font-size: 20px;
+                    }
+
+                    @media (max-width:900px) {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            //btn
+            .perJourney_section {
+                font-size: 16px;
+                color: $black3;
+                margin-bottom: 16px;
+
+                button {
+                    letter-spacing: 0.4px;
+                    color: white;
+                    font-size: 15px;
+                    padding: 0px 20px;
+                    transition: all 0.3s;
+                    height: 100%;
+                    background-color: $mainBlue;
+                    cursor: pointer;
+                    border: none;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
+                    font-weight: 500;
+                    position: relative;
+                    display: inline-block;
+                    border: 1px solid $mainBlue;
+                    width: 100%;
+                    line-height: 40px;
+
+                    &:hover {
+                        background-color: #fff;
+                        color: $mainBlue;
+                        border: 1px solid #287dfa;
+                    }
+                }
+            }
+
+            .selectedBtn {
+                button {
+                    // color: white;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+
+                    color: #155724;
+                    background-color: #d4edda;
+                    border-color: #c3e6cb;
+
+                    &:hover {
+                        border: 1px solid #02c525;
+                        background-color: #ffffff;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.forBooking {
+
+    background-color: transparent !important;
+    border: 1px solid rgb(255 255 255 / 9%);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    &:hover {
+        background-color: transparent;
+        border: 1px solid transparent !important;
+        box-shadow: rgba(71, 99, 128, 0.185) 15px 20px 30px -10px !important;
+
+        .item_img_div {
+            img {
+                transform: scale(1.05);
+                transition: .5s linear;
+            }
+        }
+    }
+
+    @media (max-width:1050px) {
+        max-width: 290px;
+    }
+
+    .item_img_div {
+        height: 112px;
+
+        @media (max-width: 1200px) {
+            padding: 15px;
+        }
+
+        @media (max-width:700px) {
+            padding: 15x;
+        }
+
+        @media (max-width:550px) {
+            padding: 15px;
+        }
+
+
+        img {
+            border-radius: 5px;
+            transition: all 0.3s;
+            width: 108%;
+
+
+            @media (max-width:1430px) {
+                width: 100%;
+            }
+
+
+            @media (max-width:420px) {
+                width: 78%;
+            }
+
+            @media (max-width:370px) {
+                width: 80%;
+            }
+        }
+    }
+
+    .item_body {
+        padding: 5px 10px;
+
+        &_header {
+
+            .header_titles {
+                .title {
+                    // color: white;
+                    // color: #7c828b;
+
+                }
+
+                .subtitle {
+                    // color: #7c828b;
+
+                }
+            }
+
+            .header_attributes {
+                .item_atr_ul {
+                    margin-top: 5px;
+
+                    .item_atr_li {
+                        // color: #ffffff;
+                        // color: #7c828b;
+
+                        font-weight: normal !important;
+                    }
+                }
+            }
+        }
+
+        .item_body_desc {
+            padding-top: 10px;
+
+            .desc_price_section {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 8px;
+
+
+                .price__num {
+                    // color: white;
+                }
+            }
+
+            //btn
+            .perJourney_section {
+                font-size: 16px;
+                color: $black3;
+                margin-bottom: 16px;
+
+                button {
+                    // color: white;
+                    // background-color: transparent !important;
+
+                    &:hover {
+                        background-color: transparent !important;
+                        border: 1px solid $mainBlue !important;
+                        color: $mainBlue !important;
+                        border: 1px solid transparent;
+                    }
+                }
+            }
+
+            .selectedBtn {
+                button {
+                    // color: white;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+
+                    color: #155724;
+                    background-color: #d4edda;
+                    border-color: #c3e6cb;
+
+                    &:hover {
+                        border: 1px solid #02c525;
+                        background-color: #ffffff;
+                    }
+                }
+
+            }
+        }
+    }
+
+}

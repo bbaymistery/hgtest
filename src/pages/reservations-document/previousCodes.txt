@@ -1,0 +1,470 @@
+// import React, { useEffect, useState } from "react";
+// import BlueBotton from "../../components/elements/Buttons/BlueButton";
+// import Layout from "../../components/layouts/Layout";
+// import {
+//   DroopOffPointsOneWayCopy,
+//   DropOffPointsReturnCopy,
+//   paxReturn,
+//   paxTransfer,
+//   PickUpPointsOneWayCopy,
+//   PickUpPointsReturnCopy,
+//   returnDateTimeString,
+//   returnPassengerEmail,
+//   returnPassengerFullName,
+//   returnPassengerPhone,
+// //   selectArchieveToken,
+//   selectCHheckedInput,
+//   selectedReturnQuot,
+//   selectedTransferQuot,
+//   selectPickUpDropOffReducer,
+//   transferDateTimeString,
+//   transferPassengerEmail,
+//   transferPassengerFullName,
+//   transferPassengerPhone,
+// } from "../../store/pickUpDropOffReducer/pickUpDropSelectors";
+// import styles from "./styles.module.scss";
+// import { useSelector } from "react-redux";
+// import Informations from "./Informations/Informations";
+// import jsPDF from "jspdf";
+// import html2canvas from "html2canvas";
+// import env from "../../resources/env";
+// import ProgressBar from "../../components/elements/ProgresBar";
+// const ReservDocuments = () => {
+//   const {
+//     reservations,
+//     params: { journeyType },
+//     meetPoint,
+//   } = useSelector(selectPickUpDropOffReducer);
+//   const selectedPickUpPointsTr = useSelector(PickUpPointsOneWayCopy);
+//   const selectedDropPointsTr = useSelector(DroopOffPointsOneWayCopy);
+//   const selectedQuotTransfer = useSelector(selectedTransferQuot);
+//   const trDateTime = useSelector(transferDateTimeString);
+
+//   //*inputs 0
+//   const fullnameTransfer = useSelector(transferPassengerFullName);
+//   const emailTransfer = useSelector(transferPassengerEmail);
+//   const phoneTranfer = useSelector(transferPassengerPhone);
+//   const selectPaxTransfer = useSelector(paxTransfer);
+
+//   //*inputs1
+//   const fullNameReturn = useSelector(returnPassengerFullName);
+//   const emailReturn = useSelector(returnPassengerEmail);
+//   const phoneReturn = useSelector(returnPassengerPhone);
+//   //error flight ucun sadece ikiterefdede pcikup'i ilgilendirir
+//   const slectPickUpPointsReturn = useSelector(PickUpPointsReturnCopy);
+//   const selectDropOffPointsReturn = useSelector(DropOffPointsReturnCopy);
+//   const selectSelectedReturnQuot = useSelector(selectedReturnQuot);
+//   const returnDate = useSelector(returnDateTimeString);
+//   const selectPaxReturn = useSelector(paxReturn);
+//   const checked = useSelector(selectCHheckedInput);
+//   const [reservId, setReservId] = useState("");
+//   const selectedArchieveToken = useSelector(selectArchieveToken);
+//   const { appData } = useSelector(selectPickUpDropOffReducer);
+
+//   //bunu sadece imgni getirmek ucun yazdg Secilen cardn img si
+//   const carObject = appData?.carsTypes?.reduce(
+//     (obj, item) => ({
+//       ...obj,
+//       [item.id]: item,
+//     }),
+//     {}
+//   );
+
+//   //when passenger gets reserv d we need archieve token
+//   const fetchArchieveToken = async () => {
+//     let reservationObj =
+//       Number(journeyType) === 1 ? reservations : [reservations[0]];
+//     let url = "https://api.london-tech.com/api/v1/sessions/add";
+//     const response = await fetch(url, {
+//       method: "POST",
+//       body: JSON.stringify({
+//         token: selectedArchieveToken,
+//         details: reservationObj,
+//       }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//     const data = await response.json();
+//   };
+//   const generatePdf = (e) => {
+//     if (typeof window === "object") {
+//       let file = document.getElementById("pdf_file");
+//       html2canvas(file, {
+//         logging: true,
+//         letterRendering: 1,
+//         useCORS: true,
+//       }).then(function (canvas) {
+//         var imgData = canvas.toDataURL("img/png", "red");
+//         var doc = new jsPDF("p", "mm", "a4");
+//         doc.addImage(
+//           imgData,
+//           "PNG",
+//           20,
+//           selectSelectedReturnQuot?.token ? 0 : 10,
+//           file.clientWidth / 5,
+//           selectSelectedReturnQuot?.token
+//             ? file.clientHeight / 6.5
+//             : file.clientHeight / 5.2
+//         );
+//         doc.save("reserv.pdf");
+//       });
+//     }
+//   };
+//   const submitDataToGetReservId = () => {
+//     let body = Number(journeyType) === 1 ? reservations : [reservations[0]];
+//     let requestOptions = {
+//       method: "POST",
+//       body: JSON.stringify({ body }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     };
+//     let vehicleTypes = [
+//       selectedQuotTransfer && carObject[selectedQuotTransfer?.carId]?.name,
+//       selectSelectedReturnQuot
+//         ? carObject[selectSelectedReturnQuot?.carId]?.name
+//         : "",
+//     ];
+
+//     let transferTypes = [
+//       selectedQuotTransfer &&
+//         carObject[selectedQuotTransfer?.carId]?.transferType,
+//       selectSelectedReturnQuot
+//         ? carObject[selectSelectedReturnQuot?.carId]?.transferType
+//         : "",
+//     ];
+
+//     //if client finish payment then u should send email So it needs to be below
+
+//     sendMail(
+//       reservId, //it is reservId
+//       reservations,
+//       vehicleTypes,
+//       transferTypes,
+//       meetPoint
+//     );
+//     // fetch(`http://localhost:7000/api/add-reservation111`, requestOptions)
+//     fetch(`${env.websiteDomain}/api/add-reservation`, requestOptions)
+//       .then((response) => response.json())
+//       .then((response) => {
+//         fetchArchieveToken();
+//         if (response.status) {
+//           console.log(response);
+
+//           setReservId(response.response.data["reservations-ids"]);
+//           sendMail(
+//             response.response.data["reservations-ids"], //it is reservId
+//             reservations,
+//             vehicleTypes,
+//             transferTypes,
+//             meetPoint
+//           );
+//         }
+//       })
+//       .catch((error) => {
+//         console.log(error.message);
+//       });
+//   };
+
+//   const sendMail = (
+//     reservId,
+//     reservations,
+//     vehicleTypes,
+//     transferTypes,
+//     meetPoint
+//   ) => {
+//     let reqOptions = {
+//       method: "POST",
+//       body: JSON.stringify({
+//         reservId,
+//         reservations,
+//         vehicleTypes,
+//         transferTypes,
+//         meetPoint,
+//       }),
+//       headers: {
+//         Accept: "application/json, text/plain, */*",
+//         "Content-Type": "application/json",
+//       },
+//     };
+//     fetch("/api/send-email", reqOptions)
+//       .then((res) => {
+//         console.log(res);
+//       })
+//       .catch((e) => console.log(e));
+//   };
+
+//   useEffect(() => {
+//     // fetchReservationData();
+//     submitDataToGetReservId();
+//     // if (Router.pathname === "/reservations-document") {
+//     //   const confirmationMessage =
+//     //     "If you leave the page, all data will be deleted.";
+//     //   const beforeUnloadHandler = (e) => {
+//     //     (e || window.event).returnValue = confirmationMessage;
+//     //     return confirmationMessage;
+//     //   };
+//     //   const beforeRouteHandler = (url) => {
+//     //     if (Router.pathname !== url && !confirm(confirmationMessage)) {
+//     //       Router.events.emit("routeChangeError");
+//     //       throw `Route change to "${url}" was aborted (this error can be safely ignored). See https://github.com/zeit/next.js/issues/2476.`;
+//     //     }
+//     //   };
+//     //   window.addEventListener("beforeunload", beforeUnloadHandler);
+//     //   Router.events.on("routeChangeStart", beforeRouteHandler);
+//     // }
+//     window.scroll({
+//       top: 95,
+//       left: 0,
+//       behavior: "smooth",
+//     });
+//     // return () => {
+//     //   window.removeEventListener("beforeunload", beforeUnloadHandler);
+//     //   Router.events.off("routeChangeStart", beforeRouteHandler);
+//     // };
+//   }, []);
+//   /*
+//  let response = {
+//             status: 201,
+//             response: {
+//                 status: 200,
+//                 data: {
+//                     "reservations-ids": [12345, 65432],
+//                 },
+//             },
+//         };
+// */
+//   return (
+//     <Layout
+//       title="Step 4 | Get İnvoices"
+//       description="Step 4 | Get İnvoices"
+//       keywords="Step 4 | Get İnvoices"
+//     >
+//       {
+//         <div className={styles.reserv_documents}>
+//           {reservId ? (
+//             <div className={styles.section}>
+//               <div className={styles.reserv_container}>
+//                 <div className={styles.downland_button} onClick={generatePdf}>
+//                   <BlueBotton
+//                     colorViceVerse={true}
+//                     title="Downland The Bill"
+//                     type=""
+//                   />
+//                 </div>
+//                 {/* <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: "<div>Salamaaaatciliq</div>",
+//                   }}
+//                 ></div> */}
+//                 <div className={styles.invoice} id="pdf_file">
+//                   {/* leeft */}
+//                   <div className={styles.invoice_left}>
+//                     <div className={styles.invoice_left_header}>
+//                       <img src="/images/br.png" alt="" />
+//                       <h1>heathrow-gatwick</h1>
+//                       <p>transfers</p>
+//                     </div>
+//                     <div className={styles.invoice_left_center}>
+//                       <div
+//                         className={`${styles.invoice_left_center_register} ${styles.invoice_left_center_inf}`}
+//                       >
+//                         <h3>Registered Office</h3>
+//                         <p>
+//                           Aero House, 611 Sipson Road, West Drayton, UB7 0JD,
+//                           United Kingdom
+//                         </p>
+//                       </div>
+//                       <div
+//                         className={`${styles.invoice_left_center_contact} ${styles.invoice_left_center_inf}`}
+//                       >
+//                         <h3>Contact Us</h3>
+//                         <p>
+//                           00442038873844 <br />
+//                           00442038873844 <br />
+//                           info@london-heathrow.taxi
+//                         </p>
+//                       </div>
+//                     </div>
+//                     <div className={styles.invoice_left_footer}>
+//                       <h3>Terms & Conditions </h3>
+//                       <p>
+//                         All quotations are valid for 30 days and Airport -meet
+//                         and greet, waiting time*, parking or tolls.
+//                       </p>
+
+//                       <p>Gratuities are at the Customer’s discretion.</p>
+//                     </div>
+//                   </div>
+//                   {/* right */}
+//                   <div className={styles.invoice_right}>
+//                     {/* burasi mobile versiyonda gorunecek Left hissenin headiridir */}
+//                     <div
+//                       className={`${styles.invoice_leftt_inside_right} ${styles.visibleInMobile}`}
+//                     >
+//                       <div className={styles.invoice_leftt_header}>
+//                         <img src="/images/br.png" alt="" />
+//                         <h1>heathrow-gatwick</h1>
+//                         <p>transfers</p>
+//                       </div>
+//                     </div>
+//                     <div className={styles.invoice_right_header}>
+//                       {/* <img src="/images/chk.jpg" alt="" /> */}
+//                       <h4>
+//                         Booking <strong>SUCCESSFULLY</strong> Completed!
+//                       </h4>
+//                       <p className={styles.thanks}>
+//                         Booking details has been sent to given email address.
+//                       </p>
+//                       <div style={{ display: "flex" }}>
+//                         <p>
+//                           Date : <span>{trDateTime.split(" ")[0]}</span>
+//                         </p>
+//                       </div>
+//                     </div>
+//                     {/* //!main tablee */}
+//                     <div className={styles.invoice_right_bill} id="table_file">
+//                       <div className={styles.pdf_content}>
+//                         <div className={styles.content_of_reserv}>
+//                           <div className={styles.passenger_details}>
+//                             <div className={styles.passenger_details_header}>
+//                               <h5> Journey Details</h5>
+
+//                               <p>Reservation Id: {reservId[0][0]}</p>
+//                             </div>
+//                             <Informations
+//                               date={trDateTime}
+//                               quot={selectedQuotTransfer}
+//                               pickUps={selectedPickUpPointsTr}
+//                               drops={selectedDropPointsTr}
+//                               fullName={fullnameTransfer}
+//                               email={emailTransfer}
+//                               phone={phoneTranfer}
+//                               passengers={selectPaxTransfer}
+//                               note={
+//                                 reservations[0]?.transferDetails
+//                                   ?.specialRequests
+//                               }
+//                               paymentType={
+//                                 reservations[0]?.paymentDetails?.paymentType
+//                               }
+//                             />
+//                           </div>
+//                           {selectSelectedReturnQuot &&
+//                             slectPickUpPointsReturn?.length > 0 &&
+//                             selectDropOffPointsReturn?.length > 0 && (
+//                               <div
+//                                 className={`${styles.passenger_details} ${
+//                                   selectedReturnQuot && styles.hasReturnQuot
+//                                 }`}
+//                               >
+//                                 <div
+//                                   className={styles.passenger_details_header}
+//                                 >
+//                                   <h5>Return Details</h5>
+//                                   {journeyType === 1 && (
+//                                     <p>Reservation Id: {reservId[0][1]}</p>
+//                                   )}
+//                                 </div>
+//                                 <Informations
+//                                   date={returnDate}
+//                                   quot={selectSelectedReturnQuot}
+//                                   pickUps={slectPickUpPointsReturn}
+//                                   drops={selectDropOffPointsReturn}
+//                                   fullName={
+//                                     checked ? fullnameTransfer : fullNameReturn
+//                                   }
+//                                   email={checked ? emailTransfer : emailReturn}
+//                                   phone={checked ? phoneTranfer : phoneReturn}
+//                                   passengers={
+//                                     checked
+//                                       ? selectPaxTransfer
+//                                       : selectPaxReturn
+//                                   }
+//                                   note={
+//                                     reservations[0]?.transferDetails
+//                                       ?.specialRequests
+//                                   }
+//                                   paymentType={
+//                                     reservations[1]?.paymentDetails?.paymentType
+//                                   }
+//                                 />
+//                               </div>
+//                             )}
+//                           <div className={styles.bottom_tot}>
+//                             <div className={styles.thankyou}>
+//                               <i className="fa-solid fa-face-smile"></i>
+//                               <p>Thank you for booking with us.</p>
+//                             </div>
+//                             <div className={styles.bottom_tot_price}>
+//                               <p className={styles.bottom_tot_price_text}>
+//                                 Total Price:
+//                               </p>
+//                               <span className={styles.bottom_tot_price_price}>
+//                                 £
+//                                 {selectedQuotTransfer?.price &&
+//                                 selectSelectedReturnQuot?.price
+//                                   ? Number(selectedQuotTransfer?.price) +
+//                                     Number(selectSelectedReturnQuot?.price)
+//                                   : Number(selectedQuotTransfer?.price)}
+//                               </span>
+//                             </div>
+//                           </div>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           ) : (
+//             <div className={`${styles.section} ${styles.section_two}`}>
+//               <ProgressBar />
+//             </div>
+//           )}
+//         </div>
+//       }
+//     </Layout>
+//   );
+// };
+
+// export default ReservDocuments;
+// export async function getServerSideProps({ req, res }) {
+//   if (req.url === "/reservations-document") {
+//     return {
+//       redirect: {
+//         destination: `/`,
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return {
+//     props: {
+//       data: "",
+//     },
+//   };
+// }
+// /*
+//   const submitDataToGetReservId = async () => {
+//     let body = Number(journeyType) === 1 ? reservations : [reservations[0]];
+//     let requestOptions = {
+//       method: "POST",
+//       body: JSON.stringify({ body }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     };
+//     // fetch(`${env.websiteDomain}/api/add-reservation`, requestOptions)
+//     fetch(`http://localhost:7000/api/add-reservation1`, requestOptions)
+//       .then((response) => response.json())
+//       .then((response) => {
+//         console.log(response);
+//         // setReservId(response.data["reservations-ids"][0]);
+//       })
+//       .catch((error) => {
+//         console.log(error.message);
+//       });
+//   };
+
+// */

@@ -1,0 +1,103 @@
+.features {
+    height: 100%;
+    position: relative;
+    padding: 50px 0px;
+    &::before {
+        position: absolute;
+        opacity: 0.2;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/color-bg.png');
+        z-index: -1;
+    }
+    .feature_container {
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+
+            @media (max-width: 998px) {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                margin-bottom: 30px;
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                max-width: 393px;
+                height: 194px;
+                &:nth-child(2) {
+                    margin-top: 60px;
+                    @media (max-width: 998px) {
+                        margin-top: 0px;
+                    }
+                }
+
+                &:hover {
+                    .card_icon {
+                        transition: ease-in-out 0.5s;
+                        transform: scale(1.08);
+                    }
+                }
+
+                .card_icon {
+                    font-size: 34px;
+                    color: rgb(40, 125, 250);
+                    font-weight: normal;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(40, 125, 250, 0.1);
+                        position: absolute;
+                        content: "";
+                        z-index: -1;
+                        border-radius: 50%;
+                    }
+
+                    &::after {
+                        width: 60px;
+                        height: 60px;
+                        top: 10px;
+                        left: 10px;
+                        background-color: rgba(40, 125, 250, 0.2);
+                        opacity: 0.5;
+                        position: absolute;
+                        content: "";
+                        z-index: -1;
+                        border-radius: 50%;
+                    }
+
+                }
+
+                .card_title {
+                    color: rgb(13, 35, 62);
+                    font-size: 20px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    margin: 13px 0px;
+                }
+
+                .card_desc {
+                    color: rgb(93, 100, 109);
+                    line-height: 27px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}

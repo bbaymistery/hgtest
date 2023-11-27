@@ -1,0 +1,169 @@
+//!general form control
+.form_control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+
+
+    .labelText {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #0d233e;
+    }
+}
+
+//!for select options
+.form_control_select {
+
+    &:after {
+        content: "<>";
+        font: 17px "Consolas", monospace;
+        color: #333;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 11px;
+        /*Adjust for position however you want*/
+
+        top: 36px;
+        padding: 0 0 2px;
+        // border-bottom: 1px solid #999;
+        /*left line */
+
+        position: absolute;
+        pointer-events: none;
+    }
+
+
+
+    .select {
+        // background-color: rgb(194, 191, 185);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /* appearance: none; */
+        /* Add some styling */
+        border-radius: 6px;
+        display: block;
+        width: 100%;
+        width: 275px;
+        height: 38px;
+        float: right;
+        margin: 5px 0px;
+        padding: 0px 24px;
+        font-size: 16px;
+        line-height: 1.75;
+        color: #333;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #cccccc;
+        -ms-word-break: normal;
+        word-break: normal;
+
+        @media (max-width: 990px) {
+            width: 100%;
+        }
+
+        .option {}
+    }
+}
+
+//!for date input
+.form_control_date {
+    width: 173px;
+    user-select: none;
+
+    @media (max-width: 990px) {
+        width: 100%;
+    }
+
+    // background-color: red;
+    .inputDate {
+        height: 38px;
+        float: right;
+        // margin: 5px 0px;
+        padding: 0px 24px;
+        font-size: 16px;
+        line-height: 1.75;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+
+
+
+    }
+}
+
+//hour and minute
+.form_control_hour {
+    // background-color: red;
+
+    .times {
+        // background-color: red;
+        display: flex;
+        justify-content: space-around;
+
+        @media (max-width: 990px) {
+            justify-content: flex-start;
+        }
+
+        .hour {
+            position: relative;
+
+            @media (max-width: 990px) {
+                &:first-child {
+                    margin-right: 1rem;
+                }
+            }
+
+            &:after {
+                content: "<>";
+                font: 17px "Consolas", monospace;
+                color: #333;
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+                right: -1px;
+                /*Adjust for position however you want*/
+
+                top: 10px;
+                padding: 0 0 2px;
+                /*left line */
+                // border-bottom: 1px solid #999;
+
+                position: absolute;
+                pointer-events: none;
+            }
+
+
+
+            .select {
+                // background-color: rgb(194, 191, 185);
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                /* appearance: none; */
+                /* Add some styling */
+                border-radius: 6px;
+
+                display: block;
+                width: 100%;
+                width: 60px;
+                height: 38px;
+                float: right;
+                // margin: 5px 0px;
+                padding: 0px 10px;
+                font-size: 16px;
+                line-height: 1.75;
+                color: #333;
+                background-color: #ffffff;
+                background-image: none;
+                border: 1px solid #cccccc;
+                -ms-word-break: normal;
+                word-break: normal;
+
+                .option {}
+            }
+        }
+    }
+}

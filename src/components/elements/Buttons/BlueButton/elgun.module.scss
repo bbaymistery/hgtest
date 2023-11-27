@@ -1,0 +1,65 @@
+@import '../../../../styles/colors';
+
+//!btnnnnn
+.btn_box {
+    width: 100%;
+
+    @media (max-width: 990px) {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .btn_primary {
+        letter-spacing: 0.4px;
+        color: white;
+        font-size: 15px;
+        padding: 0px 20px;
+        line-height: 47px;
+        transition: all 0.3s;
+        background-color: $mainBlueDark;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        font-weight: 500;
+        position: relative;
+        display: inline-block;
+        border: 1px solid $mainBlue;
+        width: 100%;
+
+        @media (max-width: 990px) {
+            width: 100%;
+
+        }
+
+        &:hover {
+            background-color: #fff;
+            color: $mainBlue;
+            border: 1px solid $mainBlue;
+        }
+    }
+
+    .contained {
+        color: $mainBlue !important;
+        background-color: white !important;
+        transition: .5s ease;
+
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+
+        &:hover {
+            box-shadow: none !important;
+            transition: .5s ease;
+
+            letter-spacing: 1px;
+        }
+
+    }
+
+    .btn_primary_responsive {
+        @media (max-width:650px) {
+            line-height: 35px;
+
+        }
+
+
+    }
+}

@@ -1,0 +1,122 @@
+.form_control {
+    width: 100%;
+    position: relative;
+
+    @media (max-width: 990px) {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            color: #5d646d;
+        }
+
+        .error {
+            float: right;
+            color: red;
+            margin-top: 10px;
+        }
+
+    }
+
+    .bottom {
+        .textarea {
+            margin-top: 8px;
+            border: 1px solid rgba(128, 137, 150, 0.2);
+            border-radius: 5px;
+            outline: none;
+            resize: none;
+            width: 100%;
+            padding: 15px 15px 15px 40px;
+
+            &:focus {
+                border-color: #287dfa;
+
+            }
+        }
+
+        .error_textarear {
+            border: 1px solid red;
+        }
+
+        .form_icon {
+            position: absolute;
+            top: 60px;
+            left: 17px;
+            color: #5d646d;
+            font-size: 14px;
+            z-index: 1;
+        }
+    }
+
+}
+
+.tr_details {
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            color: #5d646d;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500 !important;
+
+        }
+
+        .pl {
+            padding-left: 16px;
+        }
+
+        .error {
+            float: right;
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+
+        }
+
+    }
+
+    .bottom {
+        .textarea {
+            margin-top: 0px !important;
+
+            padding: 15px 15px 15px 40px;
+        }
+
+        .error_textarear {
+            border: 1px solid red;
+        }
+
+        .form_icon {
+            position: absolute;
+            bottom: 25px;
+            left: 17px;
+            color: #5d646d;
+            font-size: 14px;
+            z-index: 1111;
+        }
+    }
+
+}
+
+.fromBooking {
+    .title {
+        padding-left: 4px;
+
+    }
+
+    .bottom {
+
+        .form_icon {
+
+            z-index: 11;
+        }
+    }
+}

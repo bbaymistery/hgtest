@@ -1,0 +1,26 @@
+   .breadcrumb_area {
+       position: relative;
+       padding-top: 90px;
+       padding-bottom: 100px;
+       position: relative;
+       z-index: 1;
+       background-position: center;
+       background-image: url('/images/breadCrumb.jpg');
+
+       @media (max-width:1300px) {}
+
+       .breadcrumb_container {
+           margin: 0 var(--window-margin);
+
+           &_title {
+               color: white;
+               max-width: 1200px;
+               margin: 0 auto;
+
+               @media (max-width:800px) {
+                   text-align: center;
+               }
+
+           }
+       }
+   }

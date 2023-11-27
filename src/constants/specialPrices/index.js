@@ -1,0 +1,72 @@
+export const specialPriceConst = [
+  {
+    id: 1,
+    // img: "https://q-taxis.com/assets/images/airline-img.png",
+    h1: "Heathrow Airport",
+    abr1: "LHA",
+    h11: "Gatwick Airport",
+    abr2: "LGA",
+    // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+    linkUrl: "/from-heathrow-airport-to-gatwick-airport",
+    price: "88.00",
+    duration: "53 minutes",
+  },
+
+  {
+    id: 3,
+    // img: "https://q-taxis.com/assets/images/airline-img.png",
+    h1: "Heathrow Airport",
+    abr1: "LHA",
+    h11: "Dover Cruise ",
+    abr2: "LDC",
+    linkUrl: "/from-heathrow-airport-to-dover-cruise",
+    // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+    price: "170.00",
+    duration: "1 hour, 57 minutes",
+  },
+  {
+    id: 2,
+    // img: "https://q-taxis.com/assets/images/airline-img.png",
+    h1: "Gatwick Airport",
+    abr1: "LGA",
+    abr2: "LHA",
+    linkUrl: "/from-gatwick-airport-to-heathrow-airport",
+    h11: "Heathrow Airport",
+    // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+    price: "88.00",
+    duration: "53 minutes",
+  },
+  {
+    id: 4,
+    // img: "https://q-taxis.com/assets/images/airline-img.png",
+    h1: "Heathrow Airport",
+    abr1: "LHA",
+    h11: "SCP",
+
+    h11: "Southampton Cruise Port ",
+    // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+    linkUrl: "/from-heathrow-airport-to-southampton-cruise",
+    price: "134.00",
+    duration: "1 hour, 23 minutes",
+    abr2: "SCP",
+  },
+
+  // {
+  //   id: 5,
+  //   // img: "https://q-taxis.com/assets/images/airline-img.png",
+  //   h1: "Gatwick Airport",
+  //   h11: "Southampton Cruise Port ",
+  //   // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+  //   price: "140.00",
+  // },
+  // {
+  //   id: 6,
+  //   // img: "https://q-taxis.com/assets/images/airline-img.png",
+  //   h1: "Gatwick Airport",
+  //   h11: "Southampton Cruise Port ",
+  //   // fontAwesome: "fa fa-exchange Hero_icon__23VxF",
+  //   price: "140.00",
+  // },
+];
+
+//for changing side bar active item  when we click to each item

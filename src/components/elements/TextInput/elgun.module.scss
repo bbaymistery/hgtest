@@ -1,0 +1,217 @@
+@import '../../../styles/colors';
+
+.form_control[f="true"] {
+    @media (max-width: 990px) {
+        margin-bottom: 0rem;
+
+    }
+}
+
+.form_control {
+    width: 100%;
+    // height: 87px;
+
+    @media (max-width: 990px) {
+        width: 100%;
+        // border: 1px solid red;
+        margin-bottom: 1rem;
+
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .form_label {
+            color: #0D233E !important;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+
+
+
+    }
+
+    .marginTop {
+        margin-top: 12px;
+    }
+
+    .input_div {
+        position: relative;
+        margin-top: 8px;
+
+        .input {
+            height: auto;
+            line-height: 28px;
+            padding: 10px 20px 10px 40px;
+            font-size: 14px;
+            color: #0d233e;
+            border: 1px solid rgba(128, 137, 150, 0.2);
+            box-shadow: none;
+            transition: all 0.3s;
+            background-color: #fff;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+
+            &:focus {
+
+                border-color: #287dfa;
+            }
+
+            &::placeholder {
+                color: rgba(59, 59, 59, 0.628);
+            }
+        }
+
+        .errorInput {
+            border: 1px solid rgb(255, 36, 36);
+        }
+
+        .form_icon {
+            position: absolute;
+            top: 17px;
+            left: 17px;
+            color: #5d646d;
+            font-size: 14px;
+
+
+        }
+    }
+
+
+}
+
+// example
+.tr_details {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .form_label {
+            color: $black3;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .labelWhite {
+            color: white;
+        }
+    }
+
+    .input_div {
+        margin-top: 0px !important;
+
+        .input {
+            padding: 3px 42px !important;
+        }
+    }
+
+    .error_select {
+        border: 1px solid red !important;
+    }
+
+    .form_icon,
+    .form_icon_arrow {
+        top: 12px !important;
+        font-size: 12px !important;
+    }
+
+
+}
+
+
+.tr_details_withpadding {
+    @media (max-width: 990px) {
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+
+
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .form_label {
+            color: $black3;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .labelWhite {
+            color: white;
+        }
+    }
+
+    .input_div {
+        margin-top: 0px !important;
+
+
+
+        .input {
+            padding: 10px 20px 10px 40px;
+
+
+        }
+
+        .input_bggray {
+            background-color: #e3dede;
+
+
+            pointer-events: none !important;
+
+            &:focus {
+
+                border-color: transparent !important;
+            }
+
+        }
+    }
+
+    .error_select {
+        border: 1px solid red !important;
+    }
+
+    .form_icon,
+    .form_icon_arrow {
+        top: 20px !important;
+        font-size: 12px !important;
+    }
+
+}
+
+.noMargin {
+    .input_div {
+        margin-top: 0px !important;
+    }
+}
+
+.readOnly {
+
+    .input {
+        &:focus {
+            border-color: transparent !important;
+        }
+    }
+
+}
+
+.fromBooking {
+
+    .marginTop {
+        p {
+            padding-left: 4px;
+        }
+    }
+
+    .input {
+
+        &:focus {
+
+            border: 1px solid rgba(128, 137, 150, 0.2) !important;
+        }
+    }
+}

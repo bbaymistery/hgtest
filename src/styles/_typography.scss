@@ -1,0 +1,33 @@
+@import './colors';
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 40px;
+    color: $mainBlack;
+    font-weight: 500;
+
+    @media (max-width:450px) {
+        font-size: 30px;
+
+    }
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: $mainBlack;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

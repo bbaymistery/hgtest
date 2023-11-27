@@ -1,0 +1,486 @@
+         @import '../../../../styles/colors';
+
+         //!OneWay
+         .oneway_tab_content {
+             background-color: #fff;
+             padding: 22px;
+             border-radius: 8px;
+             margin-top: 10px;
+             display: flex;
+             flex-direction: column;
+             min-height: 230px;
+             height: 100%;
+             padding-bottom: 1.5rem;
+             font-family: Roboto,
+                 sans-serif;
+
+             @media (max-width: 1200px) {
+                 // background-color: red;
+                 min-height: 260px;
+                 height: 100%;
+             }
+
+             @media (max-width: 1060px) {
+                 // background-color: red;
+                 min-height: 280px;
+             }
+
+             @media (max-width: 990px) {
+                 height: auto;
+             }
+
+             .form_container {
+
+
+                 .form_flying {
+                     display: flex;
+                     justify-content: space-between;
+
+                     .inp_box {
+                         position: relative;
+
+
+                         @media (max-width: 990px) {
+                             flex-basis: 100%;
+                             max-width: 100%;
+                             width: 100%;
+
+                         }
+
+                         &:nth-child(1) {
+                             padding-right: 11px;
+
+                             @media (max-width: 990px) {
+                                 padding-right: 0px;
+
+                             }
+                         }
+
+                         &:nth-child(2) {
+                             padding-left: 11px;
+
+                             @media (max-width: 990px) {
+                                 padding-left: 0px;
+
+                             }
+                         }
+
+                         .popup_header[f="false"] {
+                             display: none;
+                         }
+
+                         .popup_header[f="true"] {
+                             display: flex;
+                             align-items: center;
+                             // padding-left: 14px;
+                             //   padding-top: 12px;
+                             padding-bottom: 5px;
+
+                             i {
+                                 margin-right: 11px;
+                                 font-size: 21px;
+                                 cursor: pointer;
+                             }
+
+                             p {
+                                 font-size: 19px;
+                                 font-weight: 500;
+                                 color: #000;
+                             }
+                         }
+
+                         .add_extrafly_div {
+                             padding: 5px 16px;
+                             align-items: center;
+                             display: flex;
+                             cursor: pointer;
+                             transition: .5s ease;
+                             font-weight: 500;
+                             letter-spacing: .6px;
+                             margin-bottom: 1rem;
+                             margin-top: -4px;
+
+                             &:hover {
+                                 background-color: rgba(203, 201, 201, 0.5);
+                                 border-radius: 5px;
+
+                                 .add_extrafly_div_icon {
+
+                                     color: rgb(19, 19, 20);
+
+                                 }
+
+                                 .add_extrafly_div_text {
+                                     color: rgb(14, 22, 255);
+                                 }
+                             }
+
+                             &_icon {
+                                 margin-right: 10px;
+                                 font-size: 13px;
+                                 transition: .54s linear;
+                             }
+
+                             &_text {
+                                 font-size: 14px;
+                                 transition: .54s linear;
+
+                             }
+                         }
+
+                         .point_headerr {
+                             //  background-color: red;
+                             font-weight: 500;
+                             color: rgb(93, 100, 109) !important;
+
+                         }
+                     }
+
+                     @media (max-width: 990px) {
+                         flex-direction: column;
+                     }
+
+                     @media only screen and (max-width: 990px) {
+                         .search-input-container[f="true"] {
+                             position: fixed;
+                             top: 0;
+                             left: 0;
+                             width: 100vw;
+                             height: 100vh;
+                             overflow: auto;
+                             background-color: white;
+                             z-index: 1000;
+                             padding: 12px;
+
+                         }
+                     }
+                 }
+
+                 .form_departing {
+                     margin-top: .5rem;
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: flex-end;
+                     flex-direction: row;
+
+                     @media (max-width: 990px) {
+                         flex-direction: column;
+                         margin-top: 0rem;
+                         align-items: center;
+                         width: 100%;
+                         align-items: flex-start;
+                     }
+
+                     .departing_date {
+                         flex-grow: 0;
+                         flex-shrink: 0;
+                         flex-basis: 33.3%;
+                         overflow-x: hidden;
+
+                         @media (max-width: 990px) {
+                             flex-basis: 100%;
+                             max-width: 100%;
+                             width: 100%;
+                         }
+                     }
+
+                     //!hour and minute
+                     .departing_time {
+                         // border: 1px solid rgb(40, 35, 35);
+                         display: flex;
+                         width: 100%;
+                         justify-content: space-around;
+                         flex-grow: 0;
+                         flex-shrink: 0;
+                         flex-basis: 33.3%;
+                         padding: 0 22px;
+                         // background-color: red;
+
+                         .hour {
+                             margin-right: 11px;
+                             flex: 1
+                         }
+
+                         .minute {
+                             margin-left: 11px;
+                             flex: 1
+                         }
+
+                         @media (max-width: 990px) {
+
+                             flex-basis: 100%;
+                             max-width: 100%;
+                             justify-content: flex-start;
+                             padding: 0 0px;
+
+
+                             .minute {
+                                 // background-color: red;
+                                 margin-left: 10px;
+                             }
+                         }
+
+                     }
+
+                     //!btnnnnn
+                     .departing_btn {
+                         // max-width: 295px;
+                         // width: 100%;
+                         flex-basis: 33.3%;
+
+                         @media (max-width: 990px) {
+                             margin-top: 1.5rem;
+                             flex-basis: unset;
+                             width: 100%;
+                         }
+                     }
+                 }
+
+                 .errorBookedMessage {
+                     color: red;
+                     margin-top: 1rem;
+                     font-size: 14px;
+                 }
+             }
+
+             .alertOrMessage {
+
+                 // display: none;
+                 // border-bottom: 1px solid green;
+                 position: relative;
+                 width: 100%;
+                 margin-top: 1.5rem;
+
+
+
+                 @media (max-width:660px) {
+                     font-size: .85rem;
+
+                 }
+
+             }
+         }
+
+
+         .border_blue {
+             border: 1px solid rgba(14, 22, 255, 0.467) !important;
+         }
+
+
+         ///responsive one
+         .responsive_oneway_tab_content {
+             //  background-color: rgb(176, 41, 41);
+             background-color: #fff;
+             padding: 22px;
+             border-radius: 8px;
+             margin-top: 10px;
+             display: flex;
+             flex-direction: column;
+             //  height: 100%;
+             padding-bottom: 1.5rem;
+             font-family: Roboto,
+                 sans-serif;
+             width: 100%;
+
+
+             .form_container {
+
+
+                 .general_box_title {
+                     font-size: 32px;
+                     color: rgb(90, 100, 109);
+                     font-weight: 500;
+                     line-height: 38px;
+                     font-family: 'Roboto',
+                         sans-serif;
+                     margin: 0px 0px 10px 0px;
+                 }
+
+                 .form_flying {
+                     display: flex;
+                     justify-content: space-between;
+
+                     .inp_box {
+                         position: relative;
+                         flex-basis: 100%;
+                         max-width: 100%;
+                         width: 100%;
+                         margin-bottom: 16px;
+
+
+                         &:nth-child(1) {
+                             padding-right: 0px;
+                         }
+
+                         &:nth-child(2) {
+                             padding-left: 0px;
+                         }
+
+                         .add_extrafly_div {
+                             padding: 5px 16px;
+                             align-items: center;
+                             display: flex;
+                             cursor: pointer;
+                             transition: .5s ease;
+                             font-weight: 500;
+                             letter-spacing: .6px;
+                             margin-bottom: 1rem;
+                             margin-top: -4px;
+
+                             &:hover {
+                                 background-color: rgba(203, 201, 201, 0.5);
+                                 border-radius: 5px;
+
+                                 .add_extrafly_div_icon {
+
+                                     color: rgb(19, 19, 20);
+
+                                 }
+
+                                 .add_extrafly_div_text {
+                                     color: rgb(14, 22, 255);
+                                 }
+                             }
+
+                             &_icon {
+                                 margin-right: 10px;
+                                 font-size: 13px;
+                                 transition: .54s linear;
+                             }
+
+                             &_text {
+                                 font-size: 14px;
+                                 transition: .54s linear;
+
+                             }
+                         }
+
+                         .point_headerr {
+                             font-weight: 500;
+                             color: rgb(93, 100, 109);
+                             position: relative;
+                             font-size: 15px;
+
+
+                         }
+
+
+                     }
+
+                     flex-direction: column;
+
+                 }
+
+                 .form_departing {
+                     margin-top: .5rem;
+                     display: flex;
+                     justify-content: space-between;
+                     flex-direction: column;
+                     width: 100%;
+                     align-items: flex-start;
+
+                     .departing_date {
+                         flex-basis: 100%;
+                         max-width: 100%;
+                         width: 100%;
+                         margin-bottom: 16px;
+                     }
+
+                     //!hour and minute
+                     .departing_time {
+                         display: flex;
+                         width: 100%;
+                         max-width: 100%;
+                         justify-content: flex-start;
+                         //  padding: 16px 0px;
+                         margin-bottom: 16px;
+
+                         .hour {
+                             margin-right: 11px;
+                             flex: 1
+                         }
+
+                         .minute {
+                             margin-left: 11px;
+                             flex: 1
+                         }
+                     }
+
+                     //!btnnnnn
+                     .departing_btn {
+                         flex-basis: unset;
+                         width: 100%;
+                     }
+                 }
+
+                 .errorBookedMessage {
+                     color: red;
+                     margin-top: 1rem;
+                     font-size: 14px;
+                 }
+
+             }
+
+
+             .alertOrMessage {
+
+                 // display: none;
+                 // border-bottom: 1px solid green;
+                 position: relative;
+                 width: 100%;
+                 margin-top: 1.5rem;
+                 //  display: none;
+
+                 @media (max-width:660px) {
+                     font-size: .85rem;
+
+                 }
+
+             }
+         }
+
+         .forBooking {
+             background: transparent !important;
+             border: none !important;
+             margin-top: -1rem;
+             padding: 0px;
+
+             .form_container {
+
+                 .form_flying {
+
+
+
+
+
+                     .add_extrafly_div {
+
+                         //  color: white !important;
+
+                         &:hover {
+                             background-color: rgba(203, 201, 201, 0.139) !important;
+                             border-radius: 5px;
+
+                             .add_extrafly_div_icon {
+                                 color: rgb(19, 19, 20);
+                             }
+
+                             .add_extrafly_div_text {}
+                         }
+
+                     }
+                 }
+
+
+
+
+             }
+         }
+
+         .input_delete_field_icon {
+             position: absolute;
+             right: 9px;
+             top: 17px;
+             cursor: pointer;
+             color: red;
+         }

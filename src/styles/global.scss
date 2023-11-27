@@ -1,0 +1,276 @@
+@import './breakpoint';
+///scsssss
+@import 'colors';
+@import 'fonts';
+@import 'alert';
+@import 'typography';
+// @import 'forms';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $roboto;
+    line-height: 28px;
+    --window-margin: 100px;
+    color: $black3;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        --window-margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        --window-margin: 10px;
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+    color: inherit;
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 500;
+
+    @media (max-width:990px) {
+        font-size: 35px;
+    }
+
+    @media (max-width:460px) {
+        font-size: 28px;
+    }
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+
+    @media (max-width:990px) {
+        font-size: 25px;
+    }
+
+    @media (max-width:460px) {
+        font-size: 18px;
+    }
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: $mainBlack;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+//hamburger menu
+
+//?for landinghome page in order to zoom in out
+.is_visible_animation_showcase {
+    display: block;
+    opacity: 1;
+}
+
+//?-*******************************************
+
+
+.errorBookedMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+
+// **********************************
+.col_1 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 10%;
+    max-width: 10%;
+}
+
+.col_2 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 20%;
+    max-width: 20%;
+}
+
+.col_3 {
+    // background-color: blue;
+    border: 1px solid red;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+}
+
+.col_4 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33%;
+    max-width: 33%;
+    // background-color: red;
+}
+
+
+.col_5 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 41%;
+    max-width: 41%
+}
+
+.col_6 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    max-width: 50%
+}
+
+.col_7 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 58%;
+    max-width: 58%
+}
+
+.col_8 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 66%;
+    max-width: 66%
+}
+
+//quotating loading
+.loading_inside_card {
+    height: 10px !important;
+    border: none !important;
+    padding: 10px 10px !important;
+    line-height: 17px !important;
+    // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.loading_inside_quot {
+    height: 10px !important;
+    border: none !important;
+    padding: 5px 10px !important;
+    line-height: 17px !important;
+    // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: transparent !important;
+    $colors: #7ef9ff,
+    #89cff0,
+    #4682b4,
+    #0f52ba,
+    #000080;
+
+    .dot {
+        position: relative;
+        width: .1em !important;
+        height: .1em !important;
+        margin: 0.1em;
+        border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: inherit;
+            animation: wave 2s ease-out infinite;
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                background: nth($colors, $i);
+
+                &::before {
+                    animation-delay: $i * 0.1s;
+                }
+            }
+        }
+    }
+}
+
+.error_borderr {
+    border-color: red;
+    border-radius: 5px;
+}
+
+.element_section {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background-color: $bg_light;
+
+    .section {
+
+        margin: 0 var(--window-margin);
+
+        .section_container {
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+        }
+    }
+}
+
+
+.btn_primary {
+    letter-spacing: 0.4px;
+    color: white;
+    font-size: 15px;
+    padding: 0px 20px;
+    line-height: 27px;
+    transition: all 0.3s;
+    background-color: $mainBlue;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    border: 1px solid $mainBlue;
+
+
+    &:hover {
+        background-color: #fff;
+        color: $mainBlue;
+        border: 1px solid $mainBlue;
+    }
+}

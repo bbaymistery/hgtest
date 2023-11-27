@@ -1,0 +1,409 @@
+ @import '../../../../styles/colors';
+
+ //? Return section
+ .return_tab_content {
+     display: flex;
+     flex-direction: column;
+     background-color: #fff;
+     padding: 22px;
+     border-radius: 8px;
+     margin-top: 10px;
+     display: flex;
+     min-height: 230px;
+     height: 100%;
+     padding-bottom: 1.5rem;
+     font-family: Roboto, sans-serif;
+
+     .general_box_title {
+         font-size: 32px;
+         color: rgb(90, 100, 109);
+         font-weight: 500;
+         line-height: 38px;
+         font-family: 'Roboto',
+             sans-serif;
+         ;
+         margin: 0px 0px 10px 0px;
+     }
+
+     // .form_upp   + form_bottt= genral box
+     .general_box {
+
+         .inp_boxes {
+             display: grid;
+             grid-template-columns: 1.5fr 1.5fr 1fr;
+             width: 100%;
+             justify-content: space-between;
+             gap: 1rem;
+             align-items: flex-start;
+
+
+             @media (max-width:990px) {
+                 align-items: stretch;
+
+
+             }
+
+             .inp_box {
+                 // background-color: red;
+                 position: relative;
+
+                 .add_extrafly_div {
+                     padding: 5px 16px;
+                     align-items: center;
+                     display: flex;
+                     cursor: pointer;
+                     transition: .5s ease;
+                     font-weight: 500;
+                     letter-spacing: .6px;
+                     margin-bottom: 1rem;
+                     margin-top: -4px;
+                     //  background-color: red;
+
+                     &:hover {
+                         background-color: rgba(203, 201, 201, 0.5);
+                         border-radius: 5px;
+
+                         .add_extrafly_div_icon {
+                             color: rgb(19, 19, 20);
+
+                         }
+
+                         .add_extrafly_div_text {
+                             color: rgb(14, 22, 255);
+                         }
+                     }
+
+                     &_icon {
+                         margin-right: 10px;
+                         font-size: 13px;
+                         transition: .54s linear;
+                     }
+
+                     &_text {
+                         font-size: 14px;
+                         transition: .54s linear;
+
+                     }
+                 }
+
+                 .popup_header[f="false"] {
+                     display: none;
+                 }
+
+                 .popup_header[f="true"] {
+                     display: flex;
+                     align-items: center;
+                     // padding-left: 14px;
+                     //  padding-top: 12px;
+                     padding-bottom: 5px;
+
+                     i {
+                         margin-right: 11px;
+                         font-size: 21px;
+                         cursor: pointer;
+                     }
+
+                     p {
+                         font-size: 19px;
+                         font-weight: 500;
+                         color: #000;
+                     }
+                 }
+
+                 .point_headerr {
+                     font-weight: 500;
+                     color: rgb(93, 100, 109);
+
+                 }
+             }
+
+             @media only screen and (max-width: 990px) {
+                 .search-input-container[f="true"] {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     width: 100vw;
+                     height: 100vh;
+                     overflow: auto;
+                     background-color: white;
+                     z-index: 1000;
+                     padding: 12px;
+
+                 }
+             }
+
+             @media (max-width: 990px) {
+                 display: flex;
+                 flex-direction: column;
+                 gap: 0px;
+             }
+
+             .inp_date {
+                 display: flex;
+                 justify-content: flex-end;
+                 align-items: flex-end;
+                 flex-direction: column;
+                 gap: 1.5rem;
+
+                 @media (max-width: 990px) {
+                     gap: 0px;
+                 }
+
+             }
+
+             .inp_time {
+                 width: 100%;
+                 grid-template-columns: 108px 110px;
+                 display: grid;
+                 justify-content: flex-end;
+                 justify-items: end;
+                 grid-column: 1 / 4;
+
+                 @media (max-width: 990px) {
+                     display: flex;
+                     gap: 10px;
+                     justify-content: space-between;
+                 }
+
+                 .hour {
+                     margin: 0px;
+                     margin-right: 7px;
+                     width: 100%;
+                 }
+
+                 .minute {
+                     margin: 0px;
+                     margin-left: 7px;
+                     width: 100%;
+
+                 }
+
+                 @media (max-width: 990px) {
+                     .hour {
+                         width: 100%;
+                         max-width: 280px;
+                         margin: 0px;
+                     }
+
+                     .minute {
+                         max-width: 280px;
+                         width: 100%;
+                         margin: 0px;
+                     }
+                 }
+
+             }
+         }
+
+     }
+
+     .form_return {
+         margin-top: 15px;
+     }
+
+     .btn_component {
+         margin-top: 15px;
+         max-width: 161px;
+         width: 100%;
+
+         @media (max-width: 990px) {
+             max-width: 100%;
+
+         }
+     }
+
+     .alertOrMessage {
+
+         position: relative;
+         width: 100%;
+         margin-top: 1.5rem;
+
+
+     }
+
+     .form_transfer {
+         // we didnt nedd to use each  Instead we used general box
+
+     }
+
+     .form_return {
+         // we didnt nedd to use each  Instead we used general box
+
+     }
+
+     .hiddenTransfer {
+         display: none !important;
+     }
+
+     .hiddenReturn {
+         display: none !important;
+
+     }
+ }
+
+ .border_blue {
+     border: 1px solid rgb(14, 22, 255) !important;
+     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ }
+
+ //responsive
+ .responsice_return_tab_content {
+     display: flex;
+     flex-direction: column;
+     background-color: #fff;
+     padding: 22px;
+     border-radius: 8px;
+     margin-top: 10px;
+     display: flex;
+     padding-bottom: 1.5rem;
+     font-family: Roboto, sans-serif;
+
+     .general_box_title {
+         font-size: 32px;
+         color: rgb(90, 100, 109);
+         font-weight: 500;
+         line-height: 38px;
+         font-family: 'Roboto',
+             sans-serif;
+         ;
+         margin: 0px 0px 10px 0px;
+     }
+
+     // .form_upp   + form_bottt= genral box
+     .general_box {
+         .inp_boxes {
+             display: flex;
+             flex-direction: column;
+             gap: 0px;
+
+             .inp_box {
+                 position: relative;
+
+                 .add_extrafly_div {
+                     padding: 5px 16px;
+                     align-items: center;
+                     display: flex;
+                     cursor: pointer;
+                     transition: .5s ease;
+                     font-weight: 500;
+                     letter-spacing: .6px;
+                     margin-bottom: 1rem;
+                     margin-top: -4px;
+
+                     &:hover {
+                         background-color: rgba(203, 201, 201, 0.5);
+                         border-radius: 5px;
+
+                         .add_extrafly_div_icon {
+
+                             color: rgb(19, 19, 20);
+
+                         }
+
+                         .add_extrafly_div_text {
+                             color: rgb(14, 22, 255);
+                         }
+                     }
+
+                     &_icon {
+                         margin-right: 10px;
+                         font-size: 13px;
+                         transition: .54s linear;
+                     }
+
+                     &_text {
+                         font-size: 14px;
+                         transition: .54s linear;
+
+                     }
+                 }
+
+                 .point_headerr {
+                     font-weight: 500;
+                     color: rgb(93, 100, 109);
+
+                 }
+             }
+
+
+             .inp_date {
+                 display: flex;
+                 justify-content: flex-end;
+                 align-items: flex-end;
+                 flex-direction: column;
+                 gap: 1.5rem;
+             }
+
+             .inp_time {
+                 width: 100%;
+                 display: flex;
+                 gap: 10px;
+                 justify-content: space-between;
+
+                 .hour {
+                     margin: 0px;
+                     margin-right: 7px;
+                     width: 100%;
+                 }
+
+                 .minute {
+                     margin: 0px;
+                     margin-left: 7px;
+                     width: 100%;
+                 }
+
+                 @media (max-width: 990px) {
+                     .hour {
+                         width: 100%;
+                         max-width: 280px;
+                         margin: 0px;
+                     }
+
+                     .minute {
+                         max-width: 280px;
+                         width: 100%;
+                         margin: 0px;
+                     }
+                 }
+             }
+         }
+     }
+
+     .form_return {
+         margin-top: 15px;
+     }
+
+     .btn_component {
+         margin-top: 15px;
+         max-width: 161px;
+         width: 100%;
+         max-width: 100%;
+     }
+
+     .hiddenButtonForTransfer {
+         display: none;
+     }
+
+     .alertOrMessage {
+         position: relative;
+         width: 100%;
+         margin-top: 1.5rem;
+         //  display: none;
+     }
+
+
+
+     .hiddenTransfer {
+         display: none !important;
+     }
+
+     .hiddenReturn {
+         display: none !important;
+
+     }
+
+     .form_return {}
+
+     //gonderdigimiz propsa gore hiidenReturn ve ya transferin yazilsi
+
+ }

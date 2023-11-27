@@ -1,0 +1,59 @@
+@import '../../styles/colors';
+
+.terms_section {
+    background-color: $bg_light;
+
+    .container {
+        padding-top: 100px;
+        padding-bottom: 90px;
+        position: relative;
+        margin: 0 var(--window-margin);
+
+
+        @media (max-width:990px) {
+            padding-bottom: 50px;
+
+        }
+
+        .item {
+            margin-bottom: 5px;
+            padding-top: 60px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+
+            @media (max-width:990px) {
+                padding-top: 30px;
+
+            }
+
+            table {
+                margin: 10px 0px;
+            }
+
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: center;
+                padding: 2px;
+            }
+
+            th {
+                font-weight: bold;
+                width: 250px;
+            }
+
+            td {
+                color: black;
+            }
+
+            >h2 {
+                color: $black3;
+            }
+
+            >p>strong {
+                font-weight: bolder;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+@import '../../styles/colors';
+
+.faqs_section {
+    // background-color: red;
+    background-color: $bg_light;
+
+    .container {
+
+
+        margin: 0 var(--window-margin);
+        display: flex;
+        align-items: center;
+
+        @media (max-width:990px) {
+            padding-bottom: 50px;
+
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 100px;
+            padding-bottom: 90px;
+
+            .content_title {
+                color: $black1 !important;
+                text-align: center;
+            }
+
+            .accordions {
+                padding-top: 60px;
+
+                &_title {
+                    text-align: left;
+                    font-size: 18px !important;
+                }
+
+                .accordion {
+                    width: 100%;
+                    margin: 1.5rem auto;
+
+                    &_heading {
+                        padding: 14px 0;
+
+                        &_content {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .head_title {
+                                color: $black1;
+                                cursor: pointer;
+                                z-index: 99;
+                                text-align: left;
+                                font-size: 18px !important;
+                            }
+
+                            .headClick {
+                                cursor: pointer;
+                                transition: all 0.9s;
+                                z-index: 99;
+                                transform: rotate(0deg);
+                                transition: transform 0.2s ease-in-out;
+
+
+                            }
+
+
+                            .turnUp {
+                                transform: rotate(180deg);
+
+                            }
+
+                        }
+                    }
+
+
+                    .accordion_toggle {
+                        height: 0px;
+                        font-size: 15px;
+                        opacity: 0;
+                        transition: opacity 0.3s linear,
+                            height 0.3s 0.3s linear;
+                        color: #333;
+                        border-bottom-left-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                        text-align: left;
+                        color: $black3;
+
+                        .number {
+                            font-weight: bold;
+                            padding: 0px 10px;
+                        }
+
+
+
+                    }
+
+                    .animated {
+                        opacity: 1;
+                        transition: height 0.3s linear, opacity 0.3s 0.3s linear;
+                    }
+
+                }
+            }
+        }
+
+    }
+}

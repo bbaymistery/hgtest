@@ -1,0 +1,196 @@
+@import '../../styles/colors';
+
+.fleet_section {
+
+    .faq_area {
+        background-color: $bg_light;
+        padding-top: 100px;
+        padding-bottom: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .faq_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin: 0 var(--window-margin);
+
+            &_title {
+                color: $black3;
+                line-height: 1.5;
+                font-weight: 400;
+
+            }
+
+        }
+    }
+
+    .car_section {
+        padding: 100px 0px;
+        position: relative;
+        min-height: auto;
+
+        .car_container {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+
+
+            @media (max-width:1200px) {
+                width: 960px;
+            }
+
+            @media (max-width:992px) {
+                width: 720px;
+            }
+
+            @media (max-width:768px) {
+                max-width: 540px;
+                width: 100%;
+            }
+
+            @media (max-width:400px) {
+                max-width: 380px;
+            }
+
+            .header {
+
+                .header_title {
+                    text-align: center;
+                    font-weight: 700px !important;
+                    font-size: 45px !important;
+                }
+            }
+
+            .content_car_wrap {
+                position: relative;
+                transition: .5s ease-in-out;
+                gap: 30px;
+                display: grid;
+                padding-top: 50px;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                justify-items: center;
+
+                @media (max-width:992px) {
+                    grid-template-columns: 1fr 1fr;
+
+                }
+
+                @media (max-width:768px) {
+                    grid-template-columns: 1fr;
+
+                }
+
+                .car_item {
+                    border-radius: 5px;
+                    background-color: #fff;
+                    position: relative;
+                    transition: all .5s;
+                    box-shadow: 0 0 40px rgb(82 85 90 / 10%);
+                    border-radius: 5px;
+                    width: 370px;
+                    display: flex;
+                    height: 380px;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+
+                    @media (max-width:1200px) {
+                        width: 290px;
+                    }
+
+                    @media (max-width:992px) {
+                        width: 330px;
+                    }
+
+                    @media (max-width:768px) {
+                        width: 510px;
+                    }
+
+                    @media (max-width:480px) {
+                        // background-color: red;
+                        width: 400px;
+                    }
+
+                    @media (max-width:400px) {
+                        // background-color: red;
+                        width: 340px;
+                    }
+
+                    @media (max-width:380px) {
+                        width: 330px;
+                    }
+
+                    .card_img_div {
+                        overflow: hidden;
+
+                        .card_image_link {
+                            height: 220px;
+                            display: block;
+                            overflow: hidden;
+                            position: relative;
+
+                            &:hover {
+                                transform: scale(1.05);
+                                transition: .5s ease;
+                            }
+
+
+                            .img {
+                                width: 100%;
+                                object-fit: contain;
+                                height: 100%;
+                            }
+
+                        }
+                    }
+
+                    .card_body {
+                        // border: 1px solid red;
+                        padding: 10px 30px 25px;
+
+                        &_title {
+                            font-weight: 500;
+                            line-height: 1.2;
+                            font-size: 19px;
+                            color: $black1;
+
+                            &:hover {
+                                color: $mainBlue;
+                                transition: all 0.4s;
+                                // cursor: pointer;
+                            }
+                        }
+
+                        &_attributes {
+                            // padding-bottom: 12px;
+
+                            .card_atr_ul {
+                                display: flex;
+                                align-items: center;
+                                padding: 0px;
+
+                                .card_atr_li {
+                                    margin-right: 15px;
+                                    padding-right: 15px;
+
+                                    color: #0d233e;
+                                    font-weight: 400;
+
+                                    .li_icon {
+                                        padding-right: 7px;
+                                        font-size: 15px;
+                                    }
+
+                                    .li_desc {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

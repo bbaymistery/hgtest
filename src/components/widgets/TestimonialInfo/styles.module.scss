@@ -1,0 +1,87 @@
+@import '../../../styles/colors';
+
+.testimonial {
+    padding-bottom: 100px;
+
+    .container {
+        margin: 0 var(--window-margin);
+        padding: 0px 15px;
+
+        .row {
+            .head {
+                display: flex;
+
+                .heading_title {
+                    margin-right: 40px;
+                }
+
+                .eko {
+                    margin-top: -1rem;
+                }
+            }
+
+            .heading {
+                .linkUrl {
+                    color: $mainBlueDark;
+                    // color: #1887b5;
+                    text-decoration: underline;
+                    transition: .2s ease;
+                    font-size: 19px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                .fw_bold_blue {
+                    font-weight: bold;
+                    color: $mainBlue !important;
+                }
+
+                .heading_title {
+                    color: $black1 !important;
+                    line-height: 50px;
+                    font-size: 32px;
+
+                    @media (max-width:500px) {
+                        // background-color: red;
+                        margin-top: -55px;
+                        font-size: 22px;
+                    }
+                }
+
+                .h2,
+                .h1 {
+                    color: $mainBlueDark !important;
+                    font-size: 40px;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+
+                    @media (max-width:990px) {
+                        font-size: 25px;
+                    }
+
+
+
+                    @media (max-width:400px) {
+                        font-size: 22px;
+                    }
+
+
+                }
+
+                .pt {
+                    padding-top: 30px;
+                }
+
+                .paragraph {
+                    color: $black3;
+                    line-height: 28px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+
+}

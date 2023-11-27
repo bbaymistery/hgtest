@@ -1,0 +1,110 @@
+@import '../../../styles/colors';
+
+.journey_details {
+    margin-top: 3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px;
+
+    .journey_details_title {
+        margin-bottom: 15px;
+
+        h3 {
+            position: relative;
+            font-size: 24px;
+            padding-bottom: 20px;
+
+            &::after {
+                position: absolute;
+                width: 40px;
+                height: 5px;
+                background: #3483ff;
+                content: "";
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+
+    .selecteditems {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:800px) {
+            flex-direction: column;
+        }
+
+        .points_header {
+            color: $black1;
+            font-weight: 500;
+            padding: 0px 15px;
+
+            @media (max-width:990px) {
+                padding: 0px 15px;
+
+            }
+        }
+
+        .points {
+            flex-basis: 48% !important;
+
+
+            //waiting pick up time ile text area
+            .boxx {
+
+                @media (max-width:800px) {
+                    margin-bottom: 3rem;
+
+                }
+
+            }
+        }
+    }
+
+
+    //bunu kaldrddk daha yok Waiting pick up time yuxariya aldg
+    .journey_bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media (max-width:800px) {
+            flex-direction: column;
+        }
+
+        //ortak class
+        .boxx {
+            position: relative;
+            padding: 5px 16px;
+
+
+        }
+
+        .textarea {
+            flex-basis: 48%;
+
+            @media (max-width:990px) {
+                flex-basis: 50%;
+            }
+
+
+        }
+
+        .paxs {
+            flex-basis: 48%;
+
+            margin-bottom: 1rem;
+
+            @media (max-width:990px) {
+                flex-basis: 50%;
+            }
+
+        }
+    }
+
+}
+
+.journeyWithMargin {
+    margin-bottom: 50px;
+}
